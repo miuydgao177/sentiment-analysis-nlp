@@ -1,19 +1,21 @@
-# BERT Sentiment Analysis
+# Multi-Model Sentiment Analysis Platform
 
-High-precision Chinese sentiment classification system utilizing the RoBERTa-base architecture.
+Comparative sentiment analysis platform supporting Transformer-based deep learning and traditional statistical methods.
 
-## Implementation
-The system employs the `uer/roberta-base-finetuned-chinese-sentiment` model. It features a deferred loading strategy to optimize memory utilization and utilizes local caching via verified endpoints for stable deployment.
+## Features
+- **Multi-Model Support**: Implements four distinct algorithms (RoBERTa, SVM, Naive Bayes, Logistic Regression).
+- **Comparative Analysis**: Provides a benchmark interface to evaluate Transformer-based deep learning vs. traditional statistical methods.
+- **Infrastructure**: Local caching and model serialization (.pkl) are used to ensure deployment efficiency.
 
 ## Technical Stack
 * Framework: Streamlit
-* Model: RoBERTa-base (Chinese)
-* Inference: Hugging Face Transformers
+* Models: RoBERTa-base (Chinese), SVM, Naive Bayes, Logistic Regression
+* Inference: Hugging Face Transformers, Scikit-learn
 
 ## Execution
 ```bash
-pip install streamlit transformers torch
+pip install -r requirements.txt
 export HF_ENDPOINT=https://hf-mirror.com
-python3 -m streamlit run bert_demo.py
+python3 -m streamlit run app.py
 ```
 
